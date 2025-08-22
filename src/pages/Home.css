@@ -1,0 +1,26 @@
+div {
+    font-weight: 800;
+    color: white;
+    width: 38vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+input {
+    border-radius: 50px;
+    border: none;
+    padding: 5px;
+    width: 30vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 38vh;
+    gap: 5px;
+}
+
+button {
+    margin-top: 10px;
+    
+}
