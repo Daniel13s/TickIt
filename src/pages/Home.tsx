@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { ActionTypes } from "../redux/task/action-types";
 import TaskArea from "../components/TaskArea";
+import { v4 } from "uuid";
 
 const Home = () => {
     const [nameTask, setNameTask] = useState('')
@@ -12,6 +13,7 @@ const Home = () => {
     function addNewTask() {
         //função para criar tarefas.
         const newTask = {
+            id: v4(),
             name: nameTask,
             resume: resumeTask,
             isComplete: false
