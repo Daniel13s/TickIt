@@ -5,9 +5,11 @@ type Action = {
     payload: string
 }
 
+const saved = localStorage.getItem("tasks");
 const initialState = {
-    tasks: JSON.parse(localStorage.getItem('tasks')) || []
+    tasks: saved ? JSON.parse(saved) : []
 }
+
 
 const taskReducer = (state = initialState, action: Action) => {
     switch(action.type) {

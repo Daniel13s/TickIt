@@ -1,9 +1,8 @@
 import { Plus } from "lucide-react";
 import "./Home.css"
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { ActionTypes } from "../redux/task/action-types";
-import Task from "../components/Task";
 import TaskArea from "../components/TaskArea";
 
 const Home = () => {

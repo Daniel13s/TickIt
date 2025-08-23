@@ -1,7 +1,13 @@
 import { MoveUpRight, Trash } from "lucide-react";
 import "./Task.css"
 
-const Task = ({task}) => {
+export interface InTask {
+  name: string;
+  resume: string;
+  isComplete: boolean;
+}
+
+const Task = ({task}: {task: InTask}) => {
     return(
         <div id="taskBody">
             <h1>{task.name}</h1>

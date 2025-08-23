@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
-import Task from "./Task";
+import Task, { InTask } from "./Task";
 import "./TaskArea.css"
+import { RootState } from "../redux/rootReducer";
 
 const TaskArea = () => {
-    const {tasks} = useSelector(rootReducer => rootReducer.taskReducer)
+    const {tasks} = useSelector((rootReducer: RootState) => rootReducer.taskReducer)
     return(
         <div id="taskAreaG">
             <div id="filterBar">
@@ -11,7 +12,7 @@ const TaskArea = () => {
                 <input className="buttonFilter" type="button" value="pendentes" />
             </div>
             <div id="taskArea">
-                {tasks.map((task) => (
+                {tasks.map((task: InTask) => (
                     <Task task={task} />
 ))}
             </div>
