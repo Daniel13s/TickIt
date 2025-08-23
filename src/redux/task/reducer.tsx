@@ -1,14 +1,11 @@
 import { ActionTypes } from "./action-types";
 
-type TaskList = {
-    tasks: string | null;
-}
 type Action = {
     type: string,
     payload: string
 }
 
-const initialState: TaskList = {
+const initialState = {
     tasks: JSON.parse(localStorage.getItem('tasks')) || []
 }
 
