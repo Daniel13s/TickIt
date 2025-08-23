@@ -8,20 +8,46 @@ const TaskArea = () => {
   const { tasks } = useSelector(
     (rootReducer: RootState) => rootReducer.taskReducer
   ); //consumo do estado global tasks.
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   function filterComplete() {
-    const tasksComplete = tasks.filter((task:InTask) => task.isComplete === true)
+    const allTasks = localStorage.getItem("tasks");
+    const tasksConfirmation = allTasks ? JSON.parse(allTasks) : [];
+    const tasksComplete = tasksConfirmation.filter(
+      (task: InTask) => task.isComplete === true
+    );
     dispatch({
       type: ActionTypes.COMPLETE,
-      payload: tasksComplete
-    })
+      payload: tasksComplete,
+    });
+  }
+
+  function filterPendent() {
+    const allTasks = localStorage.getItem("tasks");
+    const tasksConfirmation = allTasks ? JSON.parse(allTasks) : [];
+    const tasksPendent = tasksConfirmation.filter(
+      (task: InTask) => task.isComplete === false
+    );
+    dispatch({
+      type: ActionTypes.PENDENT,
+      payload: tasksPendent,
+    });
   }
   return (
     <div id="taskAreaG">
       <div id="filterBar">
-        <input onClick={filterComplete} className="buttonFilter" type="button" value="feitas" />
-        <input className="buttonFilter" type="button" value="pendentes" />
+        <input
+          onClick={filterComplete}
+          className="buttonFilter"
+          type="button"
+          value="feitas"
+        />
+        <input
+          onClick={filterPendent}
+          className="buttonFilter"
+          type="button"
+          value="pendentes"
+        />
       </div>
       <div id="taskArea">
         {tasks.map((task: InTask) => (
