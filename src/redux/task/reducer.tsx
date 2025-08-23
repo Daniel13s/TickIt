@@ -17,7 +17,8 @@ const taskReducer = (state = initialState, action: Action) => {
             const newTask = action.payload
             const fullList = state.tasks.concat(newTask)
             localStorage.setItem('tasks', JSON.stringify(fullList))
-            const list = saved ? JSON.parse(saved) : [],
+            const savedUp = localStorage.getItem('tasks')
+            const list = savedUp ? JSON.parse(savedUp) : [];
 
             return {...state, tasks: list}
         default:
