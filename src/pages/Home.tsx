@@ -1,15 +1,35 @@
 import { Plus } from "lucide-react";
 import "./Home.css"
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { ActionTypes } from "../redux/task/action-types";
+import Task from "../components/Task";
+import TaskArea from "../components/TaskArea";
 
 const Home = () => {
+    const [nameTask, setNameTask] = useState('')
+    const [resumeTask, setResumeTask] = useState('')
+    const dispatch = useDispatch()
+    function addNewTask() {
+        const newTask = {
+            name: nameTask,
+            resume: resumeTask,
+            isComplete: false
+        }
+        dispatch({
+            type: ActionTypes.CREATE,
+            payload: newTask
+        })
+    }
     return(
         <div>
             <h1>TickIt</h1>
-            <form action="submit">
-                <input type="text" placeholder="Nome da tarefa" />
-                <input id="descricao" type="text" placeholder="Resumo da tarefa" />
+            <form>
+                <input onChange={(e) => setNameTask(e.target.value)} type="text" placeholder="Nome da tarefa" />
+                <input onChange={(e) => setResumeTask(e.target.value)} id="description" type="text" placeholder="Resumo da tarefa" />
             </form>
-            <button><Plus /></button>
+            <button onClick={addNewTask}><Plus /></button>
+            <TaskArea />
         </div>
     )
 }

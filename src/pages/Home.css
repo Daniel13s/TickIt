@@ -1,26 +1,35 @@
 div {
     font-weight: 800;
+    display: flex;
+    flex-direction: column;
     color: white;
-    width: 38vh;
     text-align: center;
     overflow: hidden;
+
+    align-items: center;
 }
 
 input {
     border-radius: 50px;
     border: none;
     padding: 5px;
-    width: 30vh;
+}
+
+#description {
+    padding-block: 20px;
+    border-radius: 10px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 38vh;
     gap: 5px;
 }
 
 button {
     margin-top: 10px;
-    
+    border-radius: 50px;
+    border: none;
+    background-color: #9C528B;
+    color: #E2C2C6;
 }

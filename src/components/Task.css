@@ -1,0 +1,20 @@
+#taskBody {
+    background-color: #9C528B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 10px;
+    overflow: hidden;
+    height: 200px;
+}
+
+#navigationArea {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.buttonTask {
+    background-color: #2F0147;
+}
