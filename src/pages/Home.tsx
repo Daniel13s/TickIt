@@ -10,16 +10,19 @@ const Home = () => {
     const [resumeTask, setResumeTask] = useState('')
     const dispatch = useDispatch()
     function addNewTask() {
+        //função para criar tarefas.
         const newTask = {
             name: nameTask,
             resume: resumeTask,
             isComplete: false
         }
+        //action despachada para o reducer.
         dispatch({
             type: ActionTypes.CREATE,
             payload: newTask
         })
     }
+
     return(
         <div>
             <h1>TickIt</h1>

@@ -21,6 +21,12 @@ const taskReducer = (state = initialState, action: Action) => {
             const list = savedUp ? JSON.parse(savedUp) : [];
 
             return {...state, tasks: list}
+
+        case ActionTypes.UPDATE:
+            const taskCompleted = action.payload
+            taskCompleted.isComplete = taskCompleted.isComplete ? false : true;
+            localStorage.setItem('tasks', JSON.stringify(state.tasks))
+            return {...state, tasks: state.tasks}
         default:
             return state
     }
