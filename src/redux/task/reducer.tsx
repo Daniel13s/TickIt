@@ -1,7 +1,7 @@
 import { ActionTypes } from "./action-types";
 
 type TaskList = {
-    tasks: string;
+    tasks: string | null;
 }
 type Action = {
     type: string,
