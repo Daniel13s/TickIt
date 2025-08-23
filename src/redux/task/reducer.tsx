@@ -2,7 +2,7 @@ import { ActionTypes } from "./action-types";
 
 type Action = {
     type: string,
-    payload: string & boolean
+    payload: any
 }
 
 const saved = localStorage.getItem("tasks");
