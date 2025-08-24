@@ -21,7 +21,7 @@ const TaskArea = () => {
   }
 
   useEffect(()=>{
-    setTaskList(JSON.parse(localStorage.getItem('tasks')) || [])
+    setTaskList(tasks)
   }, [tasks])
   return (
     <div id="taskAreaG">
