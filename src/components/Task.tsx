@@ -25,7 +25,7 @@ const Task = ({ task }: { task: InTask }) => {
     })
   }
   function deleteTask(taskId: string){
-      const deleteList = tasks.filter((task) => task.id != taskId)
+      const deleteList = tasks.filter((task: InTask) => task.id != taskId)
       dispatch({
         type: ActionTypes.DELETE,
         payload: deleteList
