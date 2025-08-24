@@ -5,7 +5,7 @@ import { RootState } from "../redux/rootReducer";
 import { useState } from "react";
 
 const TaskArea = () => {
-  let { tasks } = useSelector(
+  const { tasks } = useSelector(
     (rootReducer: RootState) => rootReducer.taskReducer
   ); //consumo do estado global tasks.
   const [taskList, setTaskList] = useState(tasks)

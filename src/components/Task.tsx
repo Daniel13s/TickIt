@@ -1,7 +1,7 @@
 import { MoveUpRight, Trash } from "lucide-react";
 import "./Task.css";
 import { useDispatch, useSelector } from "react-redux";
-import rootReducer, { RootState } from "../redux/rootReducer";
+import { RootState } from "../redux/rootReducer";
 import { ActionTypes } from "../redux/task/action-types";
 
 export interface InTask {
