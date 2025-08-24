@@ -1,7 +1,7 @@
 import { MoveUpRight, Trash } from "lucide-react";
 import "./Task.css";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/rootReducer";
+import rootReducer, { RootState } from "../redux/rootReducer";
 import { ActionTypes } from "../redux/task/action-types";
 
 export interface InTask {
@@ -13,10 +13,8 @@ export interface InTask {
 }
 
 const Task = ({ task }: { task: InTask }) => {
-  const { tasks } = useSelector(
-    (rootReducer: RootState) => rootReducer.taskReducer
-  ); //consumo do estado global tasks.
   const dispatch = useDispatch()
+  const {tasks} = useSelector((rootReducer: RootState) => rootReducer.taskReducer)
 
   function completeTask(taskId: string) {
     //complete as tasks com um clique.

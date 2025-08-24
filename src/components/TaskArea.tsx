@@ -1,37 +1,25 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Task, { InTask } from "./Task";
 import "./TaskArea.css";
 import { RootState } from "../redux/rootReducer";
-import { ActionTypes } from "../redux/task/action-types";
+import { useState } from "react";
 
 const TaskArea = () => {
-  const { tasks } = useSelector(
+
+  let { tasks } = useSelector(
     (rootReducer: RootState) => rootReducer.taskReducer
   ); //consumo do estado global tasks.
-  const dispatch = useDispatch();
+  const [taskList, setTaskList] = useState(tasks)
 
   function filterComplete() {
-    const allTasks = localStorage.getItem("tasks");
-    const tasksConfirmation = allTasks ? JSON.parse(allTasks) : [];
-    const tasksComplete = tasksConfirmation.filter(
-      (task: InTask) => task.isComplete === true
-    );
-    dispatch({
-      type: ActionTypes.COMPLETE,
-      payload: tasksComplete,
-    });
+    const tasksComplete = tasks.filter((task) => task.isComplete === true)
+    setTaskList(tasksComplete)
   }
 
   function filterPendent() {
-    const allTasks = localStorage.getItem("tasks");
-    const tasksConfirmation = allTasks ? JSON.parse(allTasks) : [];
-    const tasksPendent = tasksConfirmation.filter(
-      (task: InTask) => task.isComplete === false
-    );
-    dispatch({
-      type: ActionTypes.PENDENT,
-      payload: tasksPendent,
-    });
+    const tasksPendent = tasks.filter((task) => task.isComplete === false)
+    setTaskList(tasksPendent)
+    return tasks
   }
   return (
     <div id="taskAreaG">
@@ -50,7 +38,7 @@ const TaskArea = () => {
         />
       </div>
       <div id="taskArea">
-        {tasks.map((task: InTask) => (
+        {taskList.map((task: InTask) => (
           <Task task={task} />
         ))}
       </div>
