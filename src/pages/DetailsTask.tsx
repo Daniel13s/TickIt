@@ -3,9 +3,9 @@ import { useSearchParams } from "react-router-dom"
 
 const DetailsTask = () => {
     const [searchParams] = useSearchParams()
-    const taskName: string = searchParams.get("nameTask")
-    const taskResume: string = searchParams.get("resume")
-    const taskIsComplete: string = searchParams.get("isComplete")
+    const taskName = searchParams.get("nameTask")
+    const taskResume = searchParams.get("resume")
+    const taskIsComplete = searchParams.get("isComplete")
     return (
         <div>
             <h1>{taskName}</h1>
