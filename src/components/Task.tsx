@@ -3,6 +3,7 @@ import "./Task.css";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/rootReducer";
 import { ActionTypes } from "../redux/task/action-types";
+import { useNavigate } from "react-router-dom";
 
 export interface InTask {
   //interface para tipar o task(evitando erros)
@@ -15,6 +16,7 @@ export interface InTask {
 const Task = ({ task }: { task: InTask }) => {
   const dispatch = useDispatch()
   const {tasks} = useSelector((rootReducer: RootState) => rootReducer.taskReducer)
+  const navigate = useNavigate()
 
   function completeTask(taskId: string) {
     //complete as tasks com um clique.
@@ -30,7 +32,11 @@ const Task = ({ task }: { task: InTask }) => {
         type: ActionTypes.DELETE,
         payload: deleteList
       })
-    }
+  }
+
+  function seeDetailsTask(taskName:string, taskResume:string, taskIsComplete:boolean) {
+    navigate(`/DetailsTask?nameTask=${taskName}&resume=${taskResume}&isComplete=${taskIsComplete}`)
+  }
   return (
     <div id={task.isComplete ? "taskBodyComplete" : "taskBody"}>
       <div onClick={():void => completeTask(task.id)}>
@@ -38,7 +44,7 @@ const Task = ({ task }: { task: InTask }) => {
         <p>{task.resume}</p>
       </div>
       <section id="navigationArea">
-        <button className="buttonTask">
+        <button onClick={() => seeDetailsTask(task.name, task.resume, task.isComplete)} className="buttonTask">
           <MoveUpRight />
         </button>
         <button onClick={():void => deleteTask(task.id)} className="buttonTask">

@@ -26,7 +26,10 @@ const taskReducer = (state = initialState, action: Action) => {
       taskCompleted.isComplete = taskCompleted.isComplete ? false : true;
       localStorage.setItem("tasks", JSON.stringify(state.tasks));
 
-      return { ...state, tasks: state.tasks };
+      const fds = localStorage.getItem("tasks")
+      const fdsmais = fds ? JSON.parse(fds) : []
+
+      return { ...state, tasks: fdsmais };
 
     case ActionTypes.DELETE:
       const listDeleted = action.payload!

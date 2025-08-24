@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Task, { InTask } from "./Task";
 import "./TaskArea.css";
 import { RootState } from "../redux/rootReducer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TaskArea = () => {
   const { tasks } = useSelector(
@@ -18,8 +18,11 @@ const TaskArea = () => {
   function filterPendent() {
     const tasksPendent = tasks.filter((task: InTask) => task.isComplete === false)
     setTaskList(tasksPendent)
-    return tasks
   }
+
+  useEffect(()=>{
+    setTaskList(JSON.parse(localStorage.getItem('tasks')))
+  }, [tasks])
   return (
     <div id="taskAreaG">
       <div id="filterBar">
