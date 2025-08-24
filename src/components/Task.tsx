@@ -23,17 +23,25 @@ const Task = ({ task }: { task: InTask }) => {
         type: ActionTypes.UPDATE,
         payload: taskCompleted
     })
-
   }
+  function deleteTask(taskId: string){
+      const deleteList = tasks.filter((task) => task.id != taskId)
+      dispatch({
+        type: ActionTypes.DELETE,
+        payload: deleteList
+      })
+    }
   return (
-    <div id={task.isComplete ? "taskBodyComplete" : "taskBody"} onClick={():void => completeTask(task.id)}>
-      <h1>{task.name}</h1>
-      <p>{task.resume}</p>
+    <div id={task.isComplete ? "taskBodyComplete" : "taskBody"}>
+      <div onClick={():void => completeTask(task.id)}>
+        <h1>{task.name}</h1>
+        <p>{task.resume}</p>
+      </div>
       <section id="navigationArea">
         <button className="buttonTask">
           <MoveUpRight />
         </button>
-        <button className="buttonTask">
+        <button onClick={():void => deleteTask(task.id)} className="buttonTask">
           <Trash />
         </button>
       </section>

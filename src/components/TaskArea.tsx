@@ -5,19 +5,18 @@ import { RootState } from "../redux/rootReducer";
 import { useState } from "react";
 
 const TaskArea = () => {
-
   let { tasks } = useSelector(
     (rootReducer: RootState) => rootReducer.taskReducer
   ); //consumo do estado global tasks.
   const [taskList, setTaskList] = useState(tasks)
 
   function filterComplete() {
-    const tasksComplete = tasks.filter((task) => task.isComplete === true)
+    const tasksComplete = tasks.filter((task: InTask) => task.isComplete === true)
     setTaskList(tasksComplete)
   }
 
   function filterPendent() {
-    const tasksPendent = tasks.filter((task) => task.isComplete === false)
+    const tasksPendent = tasks.filter((task: InTask) => task.isComplete === false)
     setTaskList(tasksPendent)
     return tasks
   }

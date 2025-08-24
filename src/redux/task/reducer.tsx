@@ -30,6 +30,14 @@ const taskReducer = (state = initialState, action: Action) => {
 
       return { ...state, tasks: state.tasks };
 
+    case ActionTypes.DELETE:
+      const listDeleted = action.payload!
+      localStorage.setItem('tasks', JSON.stringify(listDeleted))
+
+      const listUpDelete = localStorage.getItem('tasks')
+      const confListUpDelete = listUpDelete ? JSON.parse(listUpDelete) : []
+
+      return {...state, tasks: confListUpDelete}
     default:
       return state;
   }
