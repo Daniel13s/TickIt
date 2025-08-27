@@ -1,4 +1,4 @@
-import { ArrowUpLeft, Check, MoveLeft, X } from "lucide-react"
+import { Check, MoveLeft, X } from "lucide-react"
 import { useNavigate, useSearchParams } from "react-router-dom"
 import "./DetailsTask.css"
 
