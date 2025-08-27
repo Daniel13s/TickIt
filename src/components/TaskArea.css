@@ -1,7 +1,8 @@
 #taskArea {
+    width: 20rem;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    height: 60vh;
+    height: 50vh;
     gap: 5px;
     overflow: auto;
 

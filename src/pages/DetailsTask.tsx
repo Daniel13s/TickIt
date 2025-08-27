@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react"
 import { useSearchParams } from "react-router-dom"
+import "./DetailsTask.css"
 
 const DetailsTask = () => {
     const [searchParams] = useSearchParams()
@@ -7,11 +8,11 @@ const DetailsTask = () => {
     const taskResume = searchParams.get("resume")
     const taskIsComplete = searchParams.get("isComplete")
     return (
-        <div>
+        <div id="detailsbody">
             <h1>{taskName}</h1>
-            <p>{taskResume}</p>
+            <p id="taskResume">{taskResume}</p>
 
-            {taskIsComplete === "true"? <Check /> : <X />}
+            <div id="taskStatus">{taskIsComplete === "true"? <Check /> : <X />}</div>
         </div>
     )
 }

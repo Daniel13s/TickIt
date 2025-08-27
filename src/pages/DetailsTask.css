@@ -1,0 +1,21 @@
+#detailsbody {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#taskResume {
+    background-color: #9C528B;
+    width: 10rem;
+    overflow: auto;
+    height: 12rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#taskStatus {
+    background-color: #552c6b;
+    border-radius: 50px;
+    padding: 10px;
+}
