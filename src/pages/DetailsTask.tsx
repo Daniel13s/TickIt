@@ -1,5 +1,5 @@
-import { Check, X } from "lucide-react"
-import { useSearchParams } from "react-router-dom"
+import { ArrowUpLeft, Check, MoveLeft, X } from "lucide-react"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import "./DetailsTask.css"
 
 const DetailsTask = () => {
@@ -7,9 +7,16 @@ const DetailsTask = () => {
     const taskName = searchParams.get("nameTask")
     const taskResume = searchParams.get("resume")
     const taskIsComplete = searchParams.get("isComplete")
+
+    const navigate = useNavigate()
+
     return (
         <div id="detailsbody">
-            <h1>{taskName}</h1>
+            <div id="headDetailsTask">
+                <button onClick={() => navigate(-1)}><MoveLeft /></button>
+                <h1>{taskName}</h1>
+                <div></div>
+            </div>
             <p id="taskResume">{taskResume}</p>
 
             <div id="taskStatus">{taskIsComplete === "true"? <Check /> : <X />}</div>

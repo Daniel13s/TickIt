@@ -1,3 +1,9 @@
+#headDetailsTask {
+    gap: 50px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 #detailsbody {
     height: 90vh;
     display: flex;
@@ -7,6 +13,7 @@
 
 #taskResume {
     background-color: #9C528B;
+    font-weight: lighter;
     width: 10rem;
     overflow: auto;
     height: 12rem;
