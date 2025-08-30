@@ -1,6 +1,6 @@
 # ✅ TickIt
 
-[![Node.js](https://img.shields.io/badge/Node.js-v16%2B-green)](https://nodejs.org/)  [![React](https://img.shields.io/badge/React-Vite-blue)](https://vitejs.dev/)  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)  [![License](https://img.shields.io/badge/license-MIT-purple)](https://chatgpt.com/g/g-QNQZOPJ63-readme/c/LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-v16%2B-green)](https://nodejs.org/)  [![React](https://img.shields.io/badge/React-Vite-blue)](https://vitejs.dev/)  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)  [![License](https://img.shields.io/badge/license-MIT-purple)](https://github.com/Daniel13s/TickIt/blob/main/LICENSE)
 
 O **TickIt** é um **To-Do List moderno** desenvolvido com **boas práticas de front-end**.  
 Conta com design responsivo, animações suaves e funcionalidades que tornam a organização de tarefas simples e eficiente.
