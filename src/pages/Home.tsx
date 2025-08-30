@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ActionTypes } from "../redux/task/action-types";
 import TaskArea from "../components/TaskArea";
 import { v4 } from "uuid";
+import BallMotion from "../components/animation/BallMotion";
 
 const Home = () => {
     const [nameTask, setNameTask] = useState('')
@@ -34,6 +35,18 @@ const Home = () => {
             </form>
             <button onClick={addNewTask}><Plus /></button>
             <TaskArea />
+            
+            {
+                //animações
+            }
+            <BallMotion />
+            <BallMotion />
+            <BallMotion />
+            <BallMotion />
+            <BallMotion />
+            <BallMotion />
+            <BallMotion />
+            <BallMotion />
         </div>
     )
 }

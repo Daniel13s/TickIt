@@ -27,8 +27,14 @@ form {
 
 button {
     margin-top: 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 50px;
     border: none;
     background-color: #9C528B;
     color: #E2C2C6;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

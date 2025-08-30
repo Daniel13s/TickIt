@@ -1,0 +1,20 @@
+@keyframes bolha {
+    0%{
+        transform: scale(70%);
+    }
+    50%{
+        transform: scale(100%);
+    }
+    100%{
+        transform: scale(70%);
+    }
+}
+
+#ball {
+    z-index: -1;
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.158);
+
+    animation: bolha 5s infinite;
+}

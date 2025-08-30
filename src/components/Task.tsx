@@ -34,8 +34,8 @@ const Task = ({ task }: { task: InTask }) => {
       })
   }
 
-  function seeDetailsTask(taskName:string, taskResume:string, taskIsComplete:boolean) {
-    navigate(`/DetailsTask?nameTask=${taskName}&resume=${taskResume}&isComplete=${taskIsComplete}`)
+  function seeDetailsTask(taskName:string, taskResume:string, taskIsComplete:boolean, taskId: string) {
+    navigate(`/DetailsTask?nameTask=${taskName}&resume=${taskResume}&isComplete=${taskIsComplete}&id=${taskId}`)
   }
   return (
     <div id={task.isComplete ? "taskBodyComplete" : "taskBody"}>
@@ -44,7 +44,7 @@ const Task = ({ task }: { task: InTask }) => {
         <p>{task.resume}</p>
       </div>
       <section id="navigationArea">
-        <button onClick={() => seeDetailsTask(task.name, task.resume, task.isComplete)} className="buttonTask">
+        <button onClick={() => seeDetailsTask(task.name, task.resume, task.isComplete, task.id)} className="buttonTask">
           <MoveUpRight />
         </button>
         <button onClick={():void => deleteTask(task.id)} className="buttonTask">
