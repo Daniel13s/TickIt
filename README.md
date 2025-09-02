@@ -73,7 +73,33 @@ Após iniciar, acesse no navegador:
 ```
 http://localhost:5173
 ```
-
+---
+## Estrutura de pastas
+```
+src
+ ┣ components
+ ┃ ┣ animation
+ ┃ ┃ ┣ BallMotion.css
+ ┃ ┃ ┗ BallMotion.tsx
+ ┃ ┣ Task.css
+ ┃ ┣ Task.tsx
+ ┃ ┣ TaskArea.css
+ ┃ ┗ TaskArea.tsx
+ ┣ pages
+ ┃ ┣ DetailsTask.css
+ ┃ ┣ DetailsTask.tsx
+ ┃ ┣ Home.css
+ ┃ ┗ Home.tsx
+ ┣ redux
+ ┃ ┣ task
+ ┃ ┃ ┣ action-types.tsx
+ ┃ ┃ ┗ reducer.tsx
+ ┃ ┣ rootReducer.tsx
+ ┃ ┗ store.tsx
+ ┣ index.css
+ ┣ main.tsx
+ ┗ vite-env.d.ts
+```
 ---
 ## 📷Preview
 
