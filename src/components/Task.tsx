@@ -40,8 +40,8 @@ const Task = ({ task }: { task: InTask }) => {
   return (
     <div id={task.isComplete ? "taskBodyComplete" : "taskBody"}>
       <div onClick={():void => completeTask(task.id)}>
-        <h1>{task.name}</h1>
-        <p>{task.resume}</p>
+        {task.name.length === 0 ? <h1>undefined</h1> : <h1>{task.name}</h1>}
+        {task.resume.length === 0 ? <p>undefined</p> : <p>{task.resume}</p>}
       </div>
       <section id="navigationArea">
         <button onClick={() => seeDetailsTask(task.name, task.resume, task.isComplete, task.id)} className="buttonTask">

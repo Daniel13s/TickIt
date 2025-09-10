@@ -39,6 +39,8 @@ Conta com design responsivo, animações suaves e funcionalidades que tornam a o
 - **CSS**
     
 - **LocalStorage**
+
+- **Vitest**
     
 
 ---
@@ -68,6 +70,11 @@ yarn install
 npm run dev
 # ou
 yarn dev
+```
+
+### Teste
+```bash
+npm run test
 ```
 
 Após iniciar, acesse no navegador:

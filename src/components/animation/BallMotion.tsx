@@ -7,7 +7,8 @@ function BallMotion() {
         top: `${Math.random()* 70}%`,
         left: `${Math.random()* 60}%`,
         width: `${size}px`,
-        height: `${size}px`
+        height: `${size}px`,
+        backgroundColor: "#2F0147"
       }}></div>
     )
 }

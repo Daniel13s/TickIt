@@ -6,12 +6,15 @@ import { ActionTypes } from "../redux/task/action-types";
 import TaskArea from "../components/TaskArea";
 import { v4 } from "uuid";
 import BallMotion from "../components/animation/BallMotion";
+import Loading from "../components/animation/Loading";
 
 const Home = () => {
     const [nameTask, setNameTask] = useState('')
     const [resumeTask, setResumeTask] = useState('')
+    const [loading, setLoading] = useState(false)
     const dispatch = useDispatch()
     function addNewTask() {
+        setLoading(true)
         //função para criar tarefas.
         const newTask = {
             id: v4(),
@@ -24,17 +27,22 @@ const Home = () => {
             type: ActionTypes.CREATE,
             payload: newTask
         })
+        setTimeout(() => {
+            setLoading(false)
+        }, 200);
+        setNameTask('')
+        setResumeTask('')
     }
 
     return(
         <div>
             <h1>TickIt</h1>
             <form>
-                <input onChange={(e) => setNameTask(e.target.value)} type="text" placeholder="Nome da tarefa" />
-                <input onChange={(e) => setResumeTask(e.target.value)} id="description" type="text" placeholder="Resumo da tarefa" />
+                <input onChange={(e) => setNameTask(e.target.value)} type="text" placeholder="Nome da tarefa" value={nameTask} />
+                <input onChange={(e) => setResumeTask(e.target.value)} id="description" type="text" placeholder="Resumo da tarefa" value={resumeTask} />
             </form>
             <button onClick={addNewTask}><Plus /></button>
-            <TaskArea />
+            {loading ? <Loading /> : <TaskArea />}
             
             {
                 //animações

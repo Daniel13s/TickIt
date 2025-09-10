@@ -10,6 +10,7 @@ const initialState = {
   tasks: saved ? JSON.parse(saved) : [],
 };
 
+
 const taskReducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case ActionTypes.CREATE:
