@@ -89,8 +89,11 @@ src
  ┣ components
  ┃ ┣ animation
  ┃ ┃ ┣ BallMotion.css
- ┃ ┃ ┗ BallMotion.tsx
+ ┃ ┃ ┣ BallMotion.tsx
+ ┃ ┃ ┣ Loading.css
+ ┃ ┃ ┗ Loading.tsx
  ┃ ┣ Task.css
+ ┃ ┣ Task.test.tsx
  ┃ ┣ Task.tsx
  ┃ ┣ TaskArea.css
  ┃ ┗ TaskArea.tsx
@@ -107,6 +110,7 @@ src
  ┃ ┗ store.tsx
  ┣ index.css
  ┣ main.tsx
+ ┣ setupTests.ts
  ┗ vite-env.d.ts
 ```
 ---
