@@ -40,8 +40,9 @@ const Task = ({ task }: { task: InTask }) => {
   return (
     <div id={task.isComplete ? "taskBodyComplete" : "taskBody"}>
       <div onClick={():void => completeTask(task.id)}>
-        {task.name.length === 0 ? <h1>undefined</h1> : <h1>{task.name}</h1>}
-        {task.resume.length === 0 ? <p>undefined</p> : <p>{task.resume}</p>}
+        {task.name.length === 0 ? <h1>nome não definido</h1> : <h1>{task.name}</h1>}
+        {task.resume.length === 0 ? <p>descrição não definida</p> : <p>{task.resume}</p>}
+        <p style={{opacity: "30%"}}>Clique para completar</p>
       </div>
       <section id="navigationArea">
         <button onClick={() => seeDetailsTask(task.name, task.resume, task.isComplete, task.id)} className="buttonTask">
