@@ -38,7 +38,9 @@ const Home = () => {
         <div>
             <h1>TickIt</h1>
             <form>
+                <label>nome da tarefa:</label>
                 <input onChange={(e) => setNameTask(e.target.value)} type="text" placeholder="Nome da tarefa" value={nameTask} />
+                <label>descrição da tarefa:</label>
                 <input onChange={(e) => setResumeTask(e.target.value)} id="description" type="text" placeholder="Resumo da tarefa" value={resumeTask} />
             </form>
             <button onClick={addNewTask}><Plus /></button>
