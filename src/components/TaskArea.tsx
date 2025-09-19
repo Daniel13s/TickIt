@@ -40,7 +40,7 @@ const TaskArea = () => {
         />
       </div>
       <div id="taskArea">
-        {taskList.length === 0 ? <p>:/</p> : taskList.map((task: InTask) => (
+        {taskList.length === 0 ? <p>Sem tarefas por aqui</p> : taskList.map((task: InTask) => (
           <Task task={task} />
         ))}
       </div>
